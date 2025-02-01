@@ -17,11 +17,13 @@ Can be set to simply transcribe or translate to english and include the original
 
 Tenant can be 1 for Call Centre or Business editions
 
+Email can be provided to also send email with attachment, since doing the attachment with MMS seems insecure (exposed on public webserver)
+
 Usage :
 
-        voiceSMS IP User Pass AppName Tenant ["SMS Name"|-] [SMS_To|List|-] [SMS_From|-] [callbacknum|nocallbacknum|-] [transcribe|translate|-] [LogFile|-] [DTMF_Instructions_File|-] [Recording_Instructions_File|-] [Goodbye_Sound|-] [verbose|silent|-]
+        voiceSMS IP User Pass AppName Tenant ["SMS Name"|-] [SMS_To|List|-] [SMS_From|-] [callbacknum|nocallbacknum|-] [transcribe|translate|-] [email_To|List|-] [LogFile|-] [DTMF_Instructions_File|-] [Recording_Instructions_File|-] [Goodbye_Sound|-] [verbose|silent|-]
 
-        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 "Sender Name" +15555555555 +15556667777 callbacknum transcribe /var/log/ari_log.txt dtmf_instuctions recording_instructions goodbye_sound_file silent
+        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 "Sender Name" +15555555555 +15556667777 callbacknum transcribe email@domain.suf /var/log/ari_log.txt dtmf_instuctions recording_instructions goodbye_sound_file silent
 
-        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 - - - - - - - - - -
+        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 - - - - - - - - - - -
 
