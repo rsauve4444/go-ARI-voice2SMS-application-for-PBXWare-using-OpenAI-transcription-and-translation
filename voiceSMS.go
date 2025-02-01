@@ -54,6 +54,14 @@ const telnyxKey = "YOURTELNYXKEY"
 const noTranscription = "No transcription"
 const noAudio = "No audio"
 
+// SMTP server configuration
+const smtpHost = "mail.yourserver.com"
+const smtpPort = "465"
+const smtpUsername = "user@domain.com"
+const smtpPassword = "Passw0rd"
+const smtpFrom = "sender@domain.com"
+
+
 // //
 const  noCallbackNum = "nocallbacknum"
 
@@ -315,22 +323,14 @@ func handleCall(cntxt context.Context, h *ari.ChannelHandle, cid string, cname s
 //////// Secondary functions
 
 func SendEmail(to []string, subject string, body string, attachmentPath string) error {
-        // SMTP server configuration
-        smtpHost := "mail.yourserver.com"
-        smtpPort := "465"
-        smtpUsername := "sender@address.com"
-        smtpPassword := "Passw0rd"
-  
-        // Sender information
-        from := "sender@address.com"
-
+        
         // Create a new buffer to write the MIME message
         buffer := bytes.NewBuffer(nil)
         writer := multipart.NewWriter(buffer)
 
         // Set email headers
         headers := make(map[string]string)
-        headers["From"] = from
+        headers["From"] = smtpFrom
         headers["To"] = strings.Join(to, ",")
         headers["Subject"] = subject
         headers["MIME-Version"] = "1.0"
@@ -412,7 +412,7 @@ func SendEmail(to []string, subject string, body string, attachmentPath string) 
         }
 
         // Set sender
-        if err = client.Mail(from); err != nil {
+        if err = client.Mail(smtpFrom); err != nil {
                 return fmt.Errorf("failed to set sender: %v", err)
         }
 
