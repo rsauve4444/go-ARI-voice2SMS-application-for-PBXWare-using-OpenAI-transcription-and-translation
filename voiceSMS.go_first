@@ -454,7 +454,6 @@ func telnyxSendGroup(msg string) { // sent as group (max 8)
                 "to":   SMSToList,
                 //"subject": subj,
                 "text": msg,
-                //"media_urls": "https://portal.telsynergy.ca/main/img/logo_TelSynergy.png",
         }
 
         //// format the payload for json
