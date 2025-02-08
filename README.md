@@ -4,7 +4,15 @@ ARI app specifically adjusted to the Bicom PBXWare environment, written in go du
 
 OpenAI API for transcription & translation, Telnyx API for SMS delivery
 
+Has turned into Swiss Army knife for OpenAI interactions
+
+Now can also playbck translation as well as do a signle question and answer to ChatGPT in different languages, input & output.
+
+        Sustained chat will be next, I guess.
+
 Can be customized from command line, to allow running multiple simultaneous versions for different purposes
+
+Output language and voice can be defined at command line (language can be overrriden using PBXWare 'Replace Caller ID' as : lang=german)
 
 Can prompt for a callback number to be entered as DTMF (or # for as CID) or skipped with nocallbacknum
 
@@ -19,11 +27,11 @@ Tenant can be 1 for Call Centre or Business editions
 
 Email can be provided to also send email with attachment, since doing the attachment with MMS seems insecure (exposed on public webserver)
 
-Usage :
+UUsage :
 
-        voiceSMS IP User Pass AppName Tenant ["SMS Name"|-] [SMS_To|List|-] [SMS_From|-] [callbacknum|nocallbacknum|-] [transcribe|translate|-] [email_To|List|-] [LogFile|-] [DTMF_Instructions_File|-] [Recording_Instructions_File|-] [Goodbye_Sound|-] [verbose|silent|-]
+        voiceSMS IP User Pass AppName Tenant ["SMS Name"|-] [SMS_To|List|-] [SMS_From|-] [callbacknum|nocallbacknum|-] [en|fr|indonesian|-] [transcribe|translate|transback|chat|-] [alloy|echo|fable|onyx|nova|shimmer||-] [email_To|List|-] [LogFile|-] [DTMF_Instructions_File|-] [Recording_Instructions_File|-] [Goodbye_Sound|-] [verbose|silent|-]
 
-        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 "Sender Name" +15555555555 +15556667777 callbacknum transcribe email@domain.suf /var/log/ari_log.txt dtmf_instuctions recording_instructions goodbye_sound_file silent
+        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 "Sender Name" +15555555555 +15556667777 callbacknum - transcribe shimmer email@domain.suf /var/log/ari_log.txt dtmf_instuctions recording_instructions goodbye_sound_file silent
 
-        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 - - - - - - - - - - -
+        voiceSMS 127.0.0.1 ariuser aripass ariapp 999 - - - - - - - - - - - - -
 
