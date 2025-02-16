@@ -8,7 +8,13 @@ Has turned into Swiss Army knife for OpenAI interactions
 
 Now can also playbck translation as well as do a signle question and answer to ChatGPT in different languages, input & output.
 
-        Sustained chat will be next, I guess.
+        Sustained chat is now included.
+        I am now integrating embeddings and CRM connectivity to be able to have a meaningful conversation.
+        I will post this soon.
+
+        My sticking point is now being able to trasfer the call to an Extension, IVR, Queue, etc.
+                I have tried many ways, creating channels, bridges, and both, without success.
+                Until I can achieve this, all this is no more than an application that can chat, translate & SMS . . .
 
 Can be customized from command line, to allow running multiple simultaneous versions for different purposes
 
