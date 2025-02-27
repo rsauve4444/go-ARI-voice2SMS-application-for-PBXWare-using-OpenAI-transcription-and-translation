@@ -15,6 +15,10 @@ Now can also playbck translation as well as do a signle question and answer to C
         My sticking point is now being able to trasfer the call to an Extension, IVR, Queue, etc.
                 I have tried many ways, creating channels, bridges, and both, without success.
                 Until I can achieve this, all this is no more than an application that can chat, translate & SMS . . .
+                This now mostly under control, I just need to make sure the channels hang up when either end does.
+                The issue was mostly with PBXWares particular handling of contexts (@default), I believe.
+                Local Extensions, Queues, IVRs etc seem to work. Calling out is the next step.
+                I will post once it is improved and functioning.
 
 Can be customized from command line, to allow running multiple simultaneous versions for different purposes
 
