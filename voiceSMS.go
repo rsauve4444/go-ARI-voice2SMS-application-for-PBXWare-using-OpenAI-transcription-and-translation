@@ -538,7 +538,9 @@ func handleCall(cntxt context.Context, h *ari.ChannelHandle, cid string, cname s
 
         go func() {
                 <-end.Events()
-                cancel()
+                //// removed cancel()
+                //// so we don't pull the context from secondary functions
+                //cancel()
         }()
 
         if err := h.Answer(); err != nil {
